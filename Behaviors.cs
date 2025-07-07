@@ -14,7 +14,7 @@ public class LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, 
     }
 }
 
-public interface IValidatableQuery // marker identifies queries to validate
+public interface IValidatableQuery
 {
 }
 
@@ -40,7 +40,7 @@ public class QueryValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TR
         return result;
     }
     
-    private static bool DoSomeValidation() => false; // Set to false to demonstrate failure
+    private static bool DoSomeValidation() => false;
 }
 
 public class QueryResultValidationBehavior<TQuery, TResult> : IPipelineBehavior<TQuery, QueryResult<TResult>>
