@@ -52,15 +52,16 @@ public class QueryResultValidationBehavior<TQuery, TResult> : IPipelineBehavior<
 
         if (DoSomeValidation() == false)
         {
-            return new QueryResult<TResult> 
-            { 
-                Succeeded = false, 
-                Error = "Validation failed from QueryResultValidationBehavior" 
+            return new QueryResult<TResult>
+            {
+                Succeeded = false,
+                Error = "Validation failed from QueryResultValidationBehavior"
             };
         }
-        
+
         var result = await next(cancellationToken);
         return result;
     }
-    
-    private static bool DoSomeValidation() => false; 
+
+    private static bool DoSomeValidation() => false;
+}
