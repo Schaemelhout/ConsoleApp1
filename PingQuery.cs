@@ -2,7 +2,7 @@
 
 public class Pong { }
 
-public class PingQuery : IQuery<Pong> { }
+public class PingQuery : IQuery<Pong>, IValidatableQuery { }
 
 public class PingQueryHandler : IQueryHandler<PingQuery, Pong>
 {
