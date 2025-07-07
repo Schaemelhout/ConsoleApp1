@@ -14,7 +14,7 @@ public class LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, 
     }
 }
 
-public interface IValidatableQuery 
+public interface IValidatableQuery // marker identifies queries to validate
 {
 }
 
