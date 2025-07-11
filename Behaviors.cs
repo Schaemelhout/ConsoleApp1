@@ -2,23 +2,6 @@
 
 namespace ConsoleApp1;
 
-public class Behavior_1<TQuery, TResult> : IPipelineBehavior<TQuery, TResult>
-    where TQuery : IRequest<TResult>
-{
-    public async Task<TResult> Handle(TQuery query, RequestHandlerDelegate<TResult> next, CancellationToken cancellationToken)
-    {
-        Console.WriteLine($"'{GetType()}' is processing '{query.GetType()}'");
-        
-        // if (DoSomeValidation() == false)
-        //     return new QueryResult<...> { Succeeded = false, Error = "Validaton failed" };
-        
-        var result = await next(cancellationToken);
-        return result;
-    }
-    
-    private static bool DoSomeValidation() => false;
-}
-
 public class Behavior_2<TQuery, TResult> : IPipelineBehavior<TQuery, QueryResult<TResult>>
     where TQuery : IQuery<TResult>
 {
