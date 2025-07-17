@@ -2,7 +2,7 @@
 
 namespace ConsoleApp1;
 
-public class Behavior_2<TQuery, TResult> : IPipelineBehavior<TQuery, QueryResult<TResult>>
+public class QueryResultBehavior<TQuery, TResult> : IPipelineBehavior<TQuery, QueryResult<TResult>>
     where TQuery : IQuery<TResult>
 {
     public async Task<QueryResult<TResult>> Handle(TQuery query, RequestHandlerDelegate<QueryResult<TResult>> next, CancellationToken cancellationToken)
